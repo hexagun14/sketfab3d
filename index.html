@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; background: #222; }
+        
+        /* Area Preview di atas */
+        .preview-area { width: 100%; height: 70vh; background: #000; }
+        #main-iframe { width: 100%; height: 100%; border: none; }
+
+        /* List link di bawah */
+        .list-container { 
+            flex-grow: 1; 
+            padding: 20px; 
+            background: #f4f4f4; 
+            overflow-y: auto; 
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .list-item { 
+            padding: 15px; 
+            background: #fff; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            text-align: center;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+        }
+        .list-item:hover { background: #ff7700; color: white; border-color: #ff7700; }
+    </style>
+</head>
+<body>
+
+<div class="preview-area">
+    <iframe id="main-iframe" src="https://sketchfab.com/models/ID_MODEL_1/embed"></iframe>
+</div>
+
+<div class="list-container">
+    <div class="list-item" onclick="changeModel('409b03ef09644790b220d2adca99037a')">Judul Model 1</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_2')">Judul Model 2</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_3')">Judul Model 3</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_4')">Judul Model 4</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_5')">Judul Model 5</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_6')">Judul Model 6</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_7')">Judul Model 7</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_8')">Judul Model 8</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_9')">Judul Model 9</div>
+    <div class="list-item" onclick="changeModel('ID_MODEL_10')">Judul Model 10</div>
+</div>
+
+<script>
+    function changeModel(id) {
+        document.getElementById('main-iframe').src = "https://sketchfab.com/models/" + id + "/embed";
+    }
+</script>
+
+</body>
+</html>
